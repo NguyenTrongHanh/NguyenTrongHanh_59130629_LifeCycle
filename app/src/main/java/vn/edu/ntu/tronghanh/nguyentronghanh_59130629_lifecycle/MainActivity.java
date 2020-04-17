@@ -18,44 +18,52 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d( "LifeCycle",  "onCreate called");
-        Toast.makeText(getApplicationContext(), "onCreate called, onStart called, onResume called", Toast.LENGTH_SHORT).show();
         txtTG = findViewById(R.id.txtTG);
         SimpleDateFormat spf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String strDate = spf.format(new Date());
         txtTG.setText(strDate);
+        Toast.makeText(getApplicationContext(), "onCreate", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d("LifeCycle","onStart called");
+        Toast.makeText(getApplicationContext(), "onStart", Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onResume() {
         super.onResume();
         Log.d("LifeCycle", "onResume called");
+        Toast.makeText(getApplicationContext(), "onResume", Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onPause() {
         super.onPause();
         Log.d("LifeCycle", "onPause called");
+        Toast.makeText(getApplicationContext(), "onPause", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         Log.d("LifeCycle", "onStop called");
+        Toast.makeText(getApplicationContext(), "onStop", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         Log.d("LifeCycle", "onRestart called");
+        Toast.makeText(getApplicationContext(), "onRestart", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d("LifeCycle", "onDestroy called");
+        Toast.makeText(getApplicationContext(), "onDestroy", Toast.LENGTH_SHORT).show();
+
+
     }
 }
