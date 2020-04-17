@@ -4,16 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+    TextView txtTG;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d( "LifeCycle",  "onCreate called");
+        txtTG = findViewById(R.id.txtTG);
+        SimpleDateFormat spf = new SimpleDateFormat("HH:mm:ss");
+        String strDate = spf.format(new Date());
+        txtTG.setText(strDate);
+        
     }
-// comment
+
     @Override
     protected void onStart() {
         super.onStart();
